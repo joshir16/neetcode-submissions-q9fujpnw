@@ -1,0 +1,20 @@
+class Solution {
+    /**
+     * @param {number[]} nums
+     * @return {number}
+     */
+    removeDuplicates(nums) {
+        if (nums.length === 0) return 0;
+
+        let cur = 1;
+
+        for(let i = 1; i < nums.length; i++){
+            if(nums[i] !== nums[i-1]){
+                nums[cur] = nums[i]
+
+                cur++;
+            }
+        }
+        return cur
+    }
+}
